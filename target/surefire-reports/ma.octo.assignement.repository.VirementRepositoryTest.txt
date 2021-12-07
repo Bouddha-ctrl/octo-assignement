@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ma.octo.assignement.repository.VirementRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 s - in ma.octo.assignement.repository.VirementRepositoryTest

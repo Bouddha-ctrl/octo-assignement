@@ -2,9 +2,11 @@ package ma.octo.assignement;
 
 import ma.octo.assignement.domain.Compte;
 import ma.octo.assignement.domain.Utilisateur;
+import ma.octo.assignement.domain.Versement;
 import ma.octo.assignement.domain.Virement;
 import ma.octo.assignement.repository.CompteRepository;
 import ma.octo.assignement.repository.UtilisateurRepository;
+import ma.octo.assignement.repository.VersementRepository;
 import ma.octo.assignement.repository.VirementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,7 +23,7 @@ public class AssignementApplication implements CommandLineRunner {
 	@Autowired
 	private UtilisateurRepository utilisateurRepository;
 	@Autowired
-	private VirementRepository virementRepository;
+	private VersementRepository versementRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AssignementApplication.class, args);
@@ -29,6 +31,8 @@ public class AssignementApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... strings) throws Exception {
+		
+		System.out.println("Hola bonita");
 		Utilisateur utilisateur1 = new Utilisateur();
 		utilisateur1.setUsername("user1");
 		utilisateur1.setLastname("last1");
@@ -62,13 +66,14 @@ public class AssignementApplication implements CommandLineRunner {
 
 		compteRepository.save(compte2);
 
-		Virement v = new Virement();
-		v.setMontantVirement(BigDecimal.TEN);
+		Versement v = new Versement();
+		v.setMontantVersement(BigDecimal.TEN);
 		v.setCompteBeneficiaire(compte2);
-		v.setCompteEmetteur(compte1);
+		v.setNom_emetteur("miri");
+		v.setPrenom_emetteur("mohamed");
 		v.setDateExecution(new Date());
-		v.setMotifVirement("Assignment 2021");
+		v.setMotifVersement("Assignment 2021");
 
-		virementRepository.save(v);
+		versementRepository.save(v);
 	}
 }
