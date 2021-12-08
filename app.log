@@ -1,0 +1,5 @@
+2021-12-08 15:32:35.978  INFO 7992 --- [main] m.o.assignement.AssignementApplication   : Starting AssignementApplication using Java 17 on DESKTOP-QRE3Q31 with PID 7992 (C:\Users\pc\Desktop\assignement-main\target\classes started by pc in C:\Users\pc\Desktop\assignement-main)
+2021-12-08 15:32:35.981 DEBUG 7992 --- [main] m.o.assignement.AssignementApplication   : Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-12-08 15:32:35.981  INFO 7992 --- [main] m.o.assignement.AssignementApplication   : No active profile set, falling back to default profiles: default
+2021-12-08 15:32:39.603  WARN 7992 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-08 15:32:40.118  INFO 7992 --- [main] m.o.assignement.AssignementApplication   : Started AssignementApplication in 4.608 seconds (JVM running for 5.427)

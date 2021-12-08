@@ -18,7 +18,7 @@ public class CompteController {
 	private ICompteService compteService;
 	
 	
-	@GetMapping("list")
+	@GetMapping("/list")
 	List<Compte> loadAll() {
 	    return compteService.loadAll();
 	}

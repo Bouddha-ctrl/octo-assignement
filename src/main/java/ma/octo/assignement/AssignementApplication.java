@@ -1,17 +1,19 @@
 package ma.octo.assignement;
 
+import ma.octo.assignement.domain.Audit;
 import ma.octo.assignement.domain.Compte;
 import ma.octo.assignement.domain.Utilisateur;
 import ma.octo.assignement.domain.Versement;
-import ma.octo.assignement.domain.Virement;
+import ma.octo.assignement.domain.util.EventType;
+import ma.octo.assignement.repository.AuditRepository;
 import ma.octo.assignement.repository.CompteRepository;
 import ma.octo.assignement.repository.UtilisateurRepository;
 import ma.octo.assignement.repository.VersementRepository;
-import ma.octo.assignement.repository.VirementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -24,6 +26,8 @@ public class AssignementApplication implements CommandLineRunner {
 	private UtilisateurRepository utilisateurRepository;
 	@Autowired
 	private VersementRepository versementRepository;
+	@Autowired
+	private AuditRepository auditRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AssignementApplication.class, args);
@@ -58,6 +62,10 @@ public class AssignementApplication implements CommandLineRunner {
 
 		compteRepository.save(compte1);
 
+
+		
+
+		
 		Compte compte2 = new Compte();
 		compte2.setNrCompte("010000B025001000");
 		compte2.setRib("RIB2");
@@ -75,5 +83,10 @@ public class AssignementApplication implements CommandLineRunner {
 		v.setMotifVersement("Assignment 2021");
 
 		versementRepository.save(v);
+		
+		 Audit audit = new Audit();
+	        audit.setEventType(EventType.VIREMENT);
+	        audit.setMessage("test application");
+	        auditRepository.save(audit);
 	}
 }

@@ -1,18 +1,13 @@
 package ma.octo.assignement.domain;
 
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "UTILISATEUR")
-public class Utilisateur implements Serializable {
+public class Utilisateur {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @Column(length = 10, nullable = false, unique = true)

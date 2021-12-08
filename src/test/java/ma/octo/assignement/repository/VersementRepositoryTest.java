@@ -6,15 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import javax.transaction.Transactional;
+import ma.octo.assignement.service.imp.VersementServiceImp;
+
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-@Transactional
-public class VirementRepositoryTest {
+
+public class  VersementRepositoryTest {
 
   @Autowired
-  private VirementRepository virementRepository;
+  private VersementRepository versementRepository;
 
   @Test
   public void findOne() {

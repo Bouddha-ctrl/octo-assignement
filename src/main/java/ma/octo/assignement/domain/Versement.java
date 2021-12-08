@@ -3,18 +3,17 @@ package ma.octo.assignement.domain;
 import javax.persistence.*;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Data
 @Table(name = "VERSEMENT")
+@Data
 public class Versement {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY )
   private Long id;
 
   @Column(precision = 16, scale = 2, nullable = false)
@@ -30,7 +29,7 @@ public class Versement {
   @Column
   private String prenom_emetteur;
 
-  @ManyToOne()
+  @ManyToOne(fetch = FetchType.LAZY)
   private Compte compteBeneficiaire;
 
   @Column(length = 200)

@@ -2,7 +2,6 @@ package ma.octo.assignement.domain;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +12,6 @@ import java.util.Date;
 @Table(name = "VIREMENT")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Virement {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
